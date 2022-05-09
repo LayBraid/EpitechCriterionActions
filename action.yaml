@@ -1,5 +1,7 @@
 name: Epitech Criterion Actions by Maxime Premont
 
+description:
+  - "This action will create a criterion for the Epitech platform"
 runs:
   using: "composite"
   steps:
@@ -27,7 +29,7 @@ runs:
     shell: bash
     run: |-
       echo "LAST_LOGS" > last_logs.txt
-      make tests_run | cat >> last_logs.txt
+      make tests_run -C output | cat >> last_logs.txt
       echo "GCOVR_RESULTS" > gcovr_results.txt
       ./unit_tests --tap=eca_tap --always-succeed --full-stats &> eca_syn
       sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g" eca_syn &> eca_sync
