@@ -1,7 +1,5 @@
 name: Epitech Criterion Actions by Maxime Premont
 
-description:
-  - "This action will create a criterion for the Epitech platform"
 runs:
   using: "composite"
   steps:
